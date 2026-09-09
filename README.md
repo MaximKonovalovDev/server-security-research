@@ -78,7 +78,3 @@ server-security-research/
 ## License
 
 MIT. See `LICENSE`.
-
-## Author
-
-Maxim Konovalov, Haifa. Part of flax-game-studio game-security work.

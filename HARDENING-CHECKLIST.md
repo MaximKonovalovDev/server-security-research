@@ -1,0 +1,21 @@
+# Hardening checklist — run before any playtest
+- [ ] Server authoritative: clients send intents, never state.
+- [ ] Signed envelope on every packet (id + version + HMAC), reject unsigned.
+- [ ] Protocol version gate: drop old clients with a clear message.
+- [ ] Strict parsing: max sizes, enums closed, fail-closed on garbage.
+- [ ] Auth tokens required on every mutating call; read-only calls scoped.
+- [ ] Origin / audience checks on HTTP+MCP endpoints; no public tunnels to MCP.
+- [ ] Rate limits + handshake budgets per IP + per session.
+- [ ] Duplicate-session cap (e.g. 2 peers per identity), old session evicted with log.
+- [ ] Movement guards: speed/teleport/range sanity vs tick budget.
+- [ ] Telemetry: session metrics logged, flag thresholds set, queue reviewed daily.
+- [ ] Ban waves, not instant bans, on rellioned signals (avoid oracle for attackers).
+- [ ] Secrets in vault/env, never in repo; hash-verify loaded assemblies.
+- [ ] Dependency scan on game + plugin builds before cook.
+- [ ] Patch cadence posted; clients older than N versions refused.
+- [ ] Backups of state DB before each deploy; rollback tested once.
+- [ ] Logs kept 30 days, PII minimized, access list reviewed.
+- [ ] Playtest build = release config + symbols archived, not dev cheats.
+- [ ] Incident runbook printed: who stops the server, who posts status, who reviews flags.
+- [ ] Post-playtest: findings filed (see reports/FINDINGS-001 format), fixes re-tested.
+- [ ] Re-run this list. Sign + date: ___________
